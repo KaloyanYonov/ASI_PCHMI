@@ -4,12 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/body.css">
+    <link rel="stylesheet" href = "../styles/poll.css">
+    <script src="../js/poll.js" defer></script>
     <title>Democratic Poll</title>
 </head>
 <body>
     
-    <i class="fa fa-github" style="font-size:36px"></i>
-
+    <div id="poll-creator-container">
+        <h2>Create Your Poll</h2>
+        <input type="text" id="poll-question" placeholder="Enter your poll question here">
+        <div id="options-container">
+            <input type="text" placeholder="Option 1">
+        </div>
+        <button id="add-option-btn">Add Option</button>
+        <button id="create-poll-btn">Create Poll</button>
+    </div>
+    
+    <div id="poll-display-container" style="display:none;">
+        <h2 id="display-question"></h2>
+        <ul id="display-options"></ul>
+    </div>
 
 </body>
 </html>

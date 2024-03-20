@@ -1,0 +1,50 @@
+#poll-creator-container {
+    background-image: url("../images/form.jpg");
+    background-size: cover;
+    background-position: center;
+    margin: 1%;
+    padding: 5%;
+}
+
+
+
+#poll-creator-container input[type="text"] {
+    color : rgb(195, 189, 189);
+    margin: 5px 0;
+    padding: 1rem;
+    width: 80%;
+    box-sizing: border-box;
+}
+
+#poll-creator-container button {
+    color : rgb(178, 175, 176);
+    padding: 10px 5px;
+    margin-right: 5px;
+}
+
+h2 {
+    color:#beb9b9;
+    font-family: verdana;
+    margin-bottom: 20px;
+}
+
+#poll-display-container {
+    color:rgb(204, 201, 206);
+    margin: 1%;
+    padding: 5%;
+    background-image: url("../images/form.jpg");
+    background-size: cover;
+    background-position: center;
+    border-color: blueviolet;
+}
+
+#poll-display-container ul {
+    color : violet;
+    list-style: none;
+    padding: 0;
+}
+
+#poll-display-container ul li {
+    color:rgb(208, 206, 210);
+    margin: 5px 0;
+}
