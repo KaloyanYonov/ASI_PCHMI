@@ -14,3 +14,9 @@ window.onclick = function(event) {
   }
 }
 
+const reportButton = document.getElementById('reportButton');
+
+reportButton.addEventListener('click', function() {
+  window.location.href = 'report.html';
+});
+

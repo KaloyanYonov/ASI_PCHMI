@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href = "../styles/body.css">
+    <link rel = "stylesheet" href = "../styles/report.css">
+
+    <title>Report a User</title>
+</head>
+<body>
+    <h1>Report a User</h1>
+    <form action="/submitUserReport" method="POST">
+        <label for="userReport">Please describe the issue:</label><br>
+        <textarea id="userReport" name="userReport" rows="10" cols="50"></textarea><br>
+        <div class="form-submit-button">
+            <input type="submit" value="Submit Report">
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "../styles/body.css">
+    <link rel = "stylesheet" href = "../styles/report.css">
+    <title>Report a Bug</title>
+</head>
+<body>
+    <h1>Report a Bug</h1>
+    <form action="/submitBugReport" method="POST">
+        <label for="bugReport">Please describe the bug:</label><br>
+        <textarea id="bugReport" name="bugReport" rows="10" cols="50"></textarea><br>
+        <div class="form-submit-button">
+            <input type="submit" value="Submit Report">
+        </div>
+    </form>
+</body>
+</html>
