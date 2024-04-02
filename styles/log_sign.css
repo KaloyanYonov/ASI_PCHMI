@@ -3,7 +3,7 @@
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background-image: url("../images/form.jpg");
+    background-COLOR : #B2DAE6;
     background-size: cover;
     background-position: center;
     max-width: 40%;
@@ -16,19 +16,19 @@
 
 
 h2 {
-    color:#beb9b9;
+    color : black;
     font-family: verdana;
     text-align: center;
     margin-bottom: 20px;
 }
 
 .input-group {
-    color:rgb(186, 184, 184);
+    color: black;
     margin-bottom: 15px;
 }
 
 input[type="email"], input[type="password"] {
-    color:#867e7e;
+    color: BLACK;
     width: 96%;
     padding: 10px;
     border: 1px solid #ddd;
@@ -40,7 +40,7 @@ button {
     padding: 10px;
     border: none;
     border-radius: 4px;
-    background-color: #da6eda;
+    background-color: #BC7CDE;
     color: white;
     cursor: pointer;
 }
