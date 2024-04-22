@@ -1,12 +1,29 @@
 #optionsInput {
-    width: 300px;
+    position: relative;
+    background-color: #B2DAE6;
+    width: 400px;
     height: 200px;
-    margin-bottom: 10px;
+    margin-bottom: 50px;
+    margin-left : 78vh;
+}
+
+h1 {
+    position : relative;
+    text-align: center;
 }
 
 button {
+    text-align: center;
+    border : none;
+    background-color: #FC9CE4;
+    position: relative;
     padding: 10px 20px;
     cursor: pointer;
+    margin-left : 50px;
+}
+
+button:hover {
+    background-color : #db04ac;
 }
 
 #matchups {

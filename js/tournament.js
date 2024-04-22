@@ -5,8 +5,6 @@ function shuffleArray(array) {
     }
 }
 
-// works but needs improvement
-
 function setupTournament() {
     const optionsText = document.getElementById('optionsInput').value.trim();
     const options = optionsText.split('\n').filter(option => option.trim() !== '');
@@ -17,11 +15,15 @@ function setupTournament() {
     }
     shuffleArray(options);
     window.currentOptions = options;
+    setupMatchups(options);
+    displayMatchups();
+}
+
+function setupMatchups(options) {
     window.currentMatchups = [];
     for (let i = 0; i < options.length; i += 2) {
-        window.currentMatchups.push([options[i], options[i+1]]);
+        window.currentMatchups.push([options[i], options[i + 1]]);
     }
-    displayMatchups();
 }
 
 function displayMatchups() {
@@ -35,27 +37,28 @@ function displayMatchups() {
             <button class="vote-button" onclick="vote(${index}, 1)">Vote</button>`;
         matchupsElement.appendChild(matchupElement);
     });
+
+    const nextRoundButton = document.getElementById('nextRound');
+    if (window.currentMatchups.length > 1) {
+        nextRoundButton.style.display = 'block';
+    } else {
+        nextRoundButton.style.display = 'none';
+    }
+
     document.getElementById('setup').style.display = 'none';
     document.getElementById('tournament').style.display = 'block';
 }
 
-// BROKEN , will try to fix 
-
 function vote(matchupIndex, optionIndex) {
-    const selectedOption = window.currentMatchups[matchupIndex][optionIndex];
+    const winner = window.currentMatchups[matchupIndex][optionIndex];
+    window.currentOptions.push(winner); 
     window.currentMatchups.splice(matchupIndex, 1); 
-    window.currentOptions = window.currentOptions.filter(option => option !== selectedOption);
-    if (window.currentOptions.length === 1) {
-        alert(`Winner is ${window.currentOptions[0]}!`);
-        location.reload();
-        return;
-    }
     if (window.currentMatchups.length === 0) { 
         setupNextRound();
+    } else {
+        displayMatchups(); 
     }
 }
-
-//ALSO KINDA BROKEN 
 
 function setupNextRound() {
     if (window.currentOptions.length === 1) {
@@ -63,11 +66,8 @@ function setupNextRound() {
         location.reload();
         return;
     }
-    const newMatchups = [];
-    for (let i = 0; i < window.currentOptions.length; i += 2) {
-        newMatchups.push([window.currentOptions[i], window.currentOptions[i+1]]);
-    }
-    window.currentMatchups = newMatchups;
+    setupMatchups(window.currentOptions); 
+    window.currentOptions = [];
     displayMatchups();
 }
 
