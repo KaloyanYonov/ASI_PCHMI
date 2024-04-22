@@ -4,9 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/body.css">
+    <link rel = "stylesheet" href = "../styles/tournament.css">
+    <script src = "../js/tournament.js" defer></script>
     <title>Tournament Poll</title>
 </head>
 <body>
-    
+    <div id="setup">
+        <h1>Create Tournament</h1>
+        <textarea id="optionsInput" placeholder="Enter options separated by newline..."></textarea>
+        <button onclick="setupTournament()">Setup Tournament</button>
+    </div>
+    <div id="tournament" style="display: none;">
+        <h1>Tournament</h1>
+        <div id="matchups"></div>
+        <button id="nextRound" onclick="nextRound()">Next Round</button>
+    </div>
 </body>
 </html>

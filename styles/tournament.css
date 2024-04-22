@@ -1,0 +1,22 @@
+#optionsInput {
+    width: 300px;
+    height: 200px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#matchups {
+    margin-top: 20px;
+}
+
+.matchup {
+    margin-bottom: 10px;
+}
+
+.vote-button {
+    margin-left: 10px;
+}

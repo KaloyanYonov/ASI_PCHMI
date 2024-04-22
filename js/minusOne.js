@@ -15,14 +15,22 @@ document.getElementById('add-option-btn').addEventListener('click', function() {
 document.getElementById('create-poll-btn').addEventListener('click', function() {
     const question = document.getElementById('poll-question').value.trim();
     const optionsNodes = document.getElementById('options-container').getElementsByTagName('input');
-    const options = Array.from(optionsNodes).map(option => option.value.trim()).filter(Boolean);
+    let options = Array.from(optionsNodes).map(option => option.value.trim()).filter(Boolean);
 
     if (question && options.length > 0) {
         document.getElementById('poll-creator-container').style.display = 'none';
-        document.getElementById('poll-display-container').style.display = 'block';
+        runMinusOnePoll(question, options);
+    } else {
+        alert('Please enter a question and at least one option.');
+    }
+});
 
+function runMinusOnePoll(question, options) {
+    const pollDisplay = document.getElementById('poll-display-container');
+    pollDisplay.style.display = 'block';
+
+    function displayOptions(options) {
         document.getElementById('display-question').textContent = question;
-
         const displayOptions = document.getElementById('display-options');
         displayOptions.innerHTML = '';
 
@@ -30,9 +38,9 @@ document.getElementById('create-poll-btn').addEventListener('click', function() 
             const li = document.createElement('li');
             const radio = document.createElement('input');
             radio.type = 'radio';
-            radio.name = 'pollOption'; 
+            radio.name = 'pollOption';
             radio.value = option;
-            radio.id = 'option' + index; 
+            radio.id = 'option' + index;
 
             const label = document.createElement('label');
             label.htmlFor = radio.id;
@@ -48,14 +56,19 @@ document.getElementById('create-poll-btn').addEventListener('click', function() 
         voteButton.onclick = function() {
             const selectedOption = document.querySelector('input[name="pollOption"]:checked');
             if (selectedOption) {
-                alert('You voted for: ' + selectedOption.value);
+                options = options.filter(option => option !== selectedOption.value);
+                if (options.length > 1) {
+                    displayOptions(options);
+                } else if (options.length === 1) {
+                    alert('The final remaining option is: ' + options[0]);
+                    pollDisplay.style.display = 'none'; // or reset for a new poll
+                }
             } else {
                 alert('Please select an option to vote for!');
             }
         };
         displayOptions.appendChild(voteButton);
-
-    } else {
-        alert('Please enter a question and at least one option.');
     }
-});
+
+    displayOptions(options);
+}

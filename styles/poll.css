@@ -9,7 +9,7 @@
 
 
 #poll-creator-container input[type="text"] {
-    color : rgb(195, 189, 189);
+    color : black;
     margin: 5px 0;
     padding: 1rem;
     width: 80%;
@@ -17,34 +17,34 @@
 }
 
 #poll-creator-container button {
-    color : rgb(178, 175, 176);
+    color : black;
     padding: 10px 5px;
     margin-right: 5px;
 }
 
 h2 {
-    color:#beb9b9;
+    color:black;
     font-family: verdana;
     margin-bottom: 20px;
 }
 
 #poll-display-container {
-    color:rgb(204, 201, 206);
+    color: black;
     margin: 1%;
     padding: 5%;
-    background-image: url("../images/form.jpg");
+    background-color: #B2DAE6;
     background-size: cover;
     background-position: center;
     border-color: blueviolet;
 }
 
 #poll-display-container ul {
-    color : violet;
+    color : black;
     list-style: none;
     padding: 0;
 }
 
 #poll-display-container ul li {
-    color:rgb(208, 206, 210);
+    color:black;
     margin: 5px 0;
 }
