@@ -9,6 +9,7 @@ header {
     box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
+    margin-left: 1rem;
     z-index: 1000;
     width: 100%;
 }
@@ -21,15 +22,15 @@ header {
 .dropdown-content {
     top:95%;
     text-shadow: 1px 1px 1px rgb(16, 16, 16),
+        1px 1px 1px rgb(16, 16, 16),
+        1px 1px 1px rgb(16, 16, 16),
+        1px 1px 1px rgb(16, 16, 16),
         1px 2px 1px rgb(16, 16, 16),
-        1px 3px 1px rgb(16, 16, 16),
-        1px 3px 1px rgb(16, 16, 16),
-        1px 3px 1px rgb(16, 16, 16),
-        1px 3px 1px rgb(16, 16, 16),
-        1px 3px 1px rgb(16, 16, 16),
-        1px 3px 1px rgb(16, 16, 16),
-        1px 3px 1px rgb(16, 16, 16),
-        1px 3px 1px rgb(16, 16, 16),
+        1px 2px 1px rgb(16, 16, 16),
+        1px 2px 1px rgb(16, 16, 16),
+        1px 1px 1px rgb(16, 16, 16),
+        1px 2px 1px rgb(16, 16, 16),
+        1px 2px 1px rgb(16, 16, 16),
     1px 3px 5px rgba(16, 16, 16, 0.2),
     1px 3px 5px rgba(16,16,16,0.2),
     1px 3px 5px rgba(16,16,16,0.2),
@@ -68,13 +69,13 @@ header {
     cursor: pointer;
 }
 
+
 main {
     flex: 1;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center; 
-    align-items: center;
     height: 100vh;
     padding: 1rem;
     background-color: #BC7CDE;
@@ -141,7 +142,7 @@ h1 {
 }
 
 footer {
-    padding: 1rem;
+    padding: 0.9rem;
     display:flex;
     justify-content: space-between;
     align-items: center;
@@ -157,11 +158,12 @@ footer a {
 }
 
 .footer-left, .footer-center, .footer-right {
-    flex: 0.5;
+    flex:0.5;
 }
 
 .footer-left {
-    max-width: 33%;
+    margin-left: 40px;
+    max-width: 40%;
     text-align: left;
 }
 

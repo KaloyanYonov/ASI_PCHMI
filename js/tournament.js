@@ -21,7 +21,7 @@ function setupTournament() {
 
 function setupMatchups(options) {
     window.currentMatchups = [];
-    for (let i = 0; i < options.length; i += 2) {
+    for (let i = 0; i < options.length - 1; i+=2) {
         window.currentMatchups.push([options[i], options[i + 1]]);
     }
 }
