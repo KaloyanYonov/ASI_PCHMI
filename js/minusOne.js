@@ -17,11 +17,11 @@ document.getElementById('create-poll-btn').addEventListener('click', function() 
     const optionsNodes = document.getElementById('options-container').getElementsByTagName('input');
     let options = Array.from(optionsNodes).map(option => option.value.trim()).filter(Boolean);
 
-    if (question && options.length > 0) {
+    if (question && options.length > 1) {
         document.getElementById('poll-creator-container').style.display = 'none';
         runMinusOnePoll(question, options);
     } else {
-        alert('Please enter a question and at least one option.');
+        alert('Please enter a question and at least two options.');
     }
 });
 
