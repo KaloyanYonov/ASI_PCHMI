@@ -2,24 +2,8 @@
     background-color: #FC9CE4;
     background-size: cover;
     background-position: center;
-    margin: 1%;
-    padding: 5%;
-}
-
-
-
-#poll-creator-container input[type="text"] {
-    color : black;
-    margin: 5px 0;
-    padding: 1rem;
-    width: 80%;
-    box-sizing: border-box;
-}
-
-#poll-creator-container button {
-    color : black;
-    padding: 10px 5px;
-    margin-right: 5px;
+    margin: 3%;
+    padding: 10%;
 }
 
 h1 {
@@ -67,21 +51,68 @@ h2{
 
 #poll-display-container {
     color: black;
-    margin: 1%;
-    padding: 5%;
+    margin: 3%;
+    padding: 10%;
     background-color: #B2DAE6;
     background-size: cover;
     background-position: center;
-    border-color: blueviolet;
+    border-color: #8E2DE2;
 }
 
 #poll-display-container ul {
     color : black;
     list-style: none;
-    padding: 0;
+    padding: 10px;
 }
 
 #poll-display-container ul li {
     color:black;
-    margin: 5px 0;
+    margin: 5px 2px;
+}
+
+
+#poll-creator-container button {
+    background: linear-gradient(to right, #8E2DE2, #4A00E0);
+    border: none;
+    border-radius: 20px;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+#poll-creator-container button:hover {
+    background: linear-gradient(to right, #4A00E0, #8E2DE2);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+#poll-creator-container button:active {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transform: translateY(2px);
+}
+
+#poll-creator-container input[type="text"] {
+    border: 2px solid #8E2DE2;
+    border-radius: 10px;
+    padding: 10px;
+    width: 80%;
+    transition: border-color 0.3s ease;
+}
+
+#poll-creator-container input[type="text"]:focus {
+    border-color: #4A00E0;
+    outline: none;
+}
+
+#poll-display-container ul li {
+    padding: 10px;
+    background-color: #FC9CE4;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#poll-display-container ul li:hover {
+    background-color: #fa76be;
 }

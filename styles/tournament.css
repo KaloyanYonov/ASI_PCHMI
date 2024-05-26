@@ -28,17 +28,20 @@ h1 {
 }
 
 button {
-    text-align: center;
-    border : none;
-    background-color: #FC9CE4;
-    position: relative;
+    margin-right: 100px;
+    background: linear-gradient(to right, #8E2DE2, #4A00E0);
+    border: none;
+    border-radius: 20px;
+    color: white;
     padding: 10px 20px;
     cursor: pointer;
-    margin-left : 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
 
 button:hover {
-    background-color : #db04ac;
+    background: linear-gradient(to right, #4A00E0, #8E2DE2);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 #matchups {
