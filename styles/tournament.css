@@ -28,7 +28,6 @@ h1 {
 }
 
 button {
-    margin-right: 100px;
     background: linear-gradient(to right, #8E2DE2, #4A00E0);
     border: none;
     border-radius: 20px;
@@ -54,4 +53,16 @@ button:hover {
 
 .vote-button {
     margin-left: 10px;
+}
+
+textarea {
+    margin: 10px 5px; 
+    padding: 20px; 
+    border-radius: 5px; 
+    border: 1px solid #ccc; 
+    outline: none; 
+    resize:none;
+    font-family: verdana;
+    color: #000000; 
+    background-color: #B2DAE6;
 }

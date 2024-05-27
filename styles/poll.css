@@ -116,3 +116,9 @@ h2{
 #poll-display-container ul li:hover {
     background-color: #fa76be;
 }
+
+#add-option-btn {
+    position : relative;
+    margin: 0.5rem;
+    padding : 1rem;
+}
