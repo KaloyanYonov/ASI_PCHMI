@@ -1,0 +1,293 @@
+<style>
+    .page-wrapper {
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    .header-container {
+      display: flex;
+      width: 100%;
+      padding-bottom: 80px;
+      flex-direction: column;
+    }
+    
+    @media (max-width: 991px) {
+      .header-container {
+        max-width: 100%;
+      }
+    }
+    
+    .nav-bar {
+      box-shadow: 0 1px 2px 0 rgba(65, 48, 93, 0.25);
+      background-color: #fff;
+      display: flex;
+      width: 100%;
+      align-items: center;
+      font: 400 14px/150% Inter, sans-serif;
+      color: #474747;
+      justify-content: center;
+      padding: 16px 60px;
+    }
+    
+    @media (max-width: 991px) {
+      .nav-bar {
+        max-width: 100%;
+        padding: 0 20px;
+      }
+    }
+    
+    .nav-content {
+      display: flex;
+      width: 100%;
+      max-width: 1140px;
+      gap: 20px;
+      justify-content: space-between;
+    }
+    
+    @media (max-width: 991px) {
+      .nav-content {
+        max-width: 100%;
+        flex-wrap: wrap;
+      }
+    }
+    
+    .logo-section {
+      align-self: start;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    @media (max-width: 991px) {
+      .logo-section {
+        flex-wrap: wrap;
+      }
+    }
+    
+    .logo {
+      aspect-ratio: 3.33;
+      object-fit: auto;
+      object-position: center;
+      width: 125px;
+      align-self: stretch;
+      max-width: 100%;
+    }
+    
+    .nav-item {
+      align-self: stretch;
+      margin: auto 0;
+    }
+    
+    .nav-item-grow {
+      flex-grow: 1;
+      flex-basis: auto;
+    }
+    
+    .user-section {
+      display: flex;
+      gap: 20px;
+      white-space: nowrap;
+      justify-content: space-between;
+    }
+    
+    @media (max-width: 991px) {
+      .user-section {
+        white-space: initial;
+      }
+    }
+    
+    .history-wrapper {
+      display: flex;
+      gap: 10px;
+      margin: auto 0;
+    }
+    
+    @media (max-width: 991px) {
+      .history-wrapper {
+        white-space: initial;
+      }
+    }
+    
+    .history-icon {
+      aspect-ratio: 1.59;
+      object-fit: auto;
+      object-position: center;
+      width: 16px;
+      fill: #474747;
+      align-self: start;
+    }
+    
+    .user-icon {
+      aspect-ratio: 1;
+      object-fit: auto;
+      object-position: center;
+      width: 41px;
+    }
+    
+    .account-card {
+      border-radius: 20px;
+      box-shadow: 0 0 12.2px 0 rgba(71, 71, 71, 0.3);
+      background-color: #fff;
+      align-self: center;
+      display: flex;
+      width: 626px;
+      max-width: 100%;
+      flex-direction: column;
+      align-items: center;
+      font: 500 24px Inter, sans-serif;
+      color: #412f5d;
+      margin: 100px 0 20px;
+      padding: 50px 60px 80px;
+    }
+    
+    @media (max-width: 991px) {
+      .account-card {
+        margin-top: 40px;
+        padding: 0 20px;
+      }
+    }
+    
+    .account-form {
+      display: flex;
+      width: 368px;
+      max-width: 100%;
+      flex-direction: column;
+    }
+    
+    .account-title {
+      text-align: center;
+      align-self: center;
+      font: 700 36px Montserrat, sans-serif;
+    }
+    
+    .profile-image {
+      aspect-ratio: 1;
+      object-fit: auto;
+      object-position: center;
+      width: 150px;
+      align-self: center;
+      margin-top: 22px;
+      max-width: 100%;
+    }
+    
+    .username-section {
+      align-self: center;
+      display: flex;
+      margin-top: 22px;
+      gap: 20px;
+      white-space: nowrap;
+      text-align: center;
+      justify-content: space-between;
+    }
+    
+    @media (max-width: 991px) {
+      .username-section {
+        white-space: initial;
+      }
+    }
+    
+    .username {
+      margin: auto 0;
+    }
+    
+    .edit-icon {
+      aspect-ratio: 1;
+      object-fit: auto;
+      object-position: center;
+      width: 25px;
+      fill: #412f5d;
+    }
+    
+    .form-label {
+      margin-top: 27px;
+    }
+    
+    .form-input-wrapper {
+      display: flex;
+      margin-top: 15px;
+      gap: 20px;
+      font-size: 16px;
+      font-weight: 400;
+      white-space: nowrap;
+    }
+    
+    @media (max-width: 991px) {
+      .form-input-wrapper {
+        white-space: initial;
+      }
+    }
+    
+    .form-input {
+      font-family: Inter, sans-serif;
+      border-radius: 6px;
+      border: 1px solid #474747;
+      align-items: start;
+      justify-content: center;
+      flex-grow: 1;
+      width: fit-content;
+      padding: 14px 12px;
+    }
+    
+    @media (max-width: 991px) {
+      .form-input {
+        padding-right: 20px;
+        white-space: initial;
+      }
+    }
+    
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    </style>
+    
+    <div class="page-wrapper">
+      <header class="header-container">
+        <nav class="nav-bar">
+          <div class="nav-content">
+            <div class="logo-section">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/10f391ea532266c39ffc0549396ba583ed348a6a9956a82df7b5163dfe02bcf3?apiKey=cb617d26e1044ef184d535111275c0c4&" alt="Company Logo" class="logo" />
+              <span class="nav-item">Elimination Poll</span>
+              <span class="nav-item nav-item-grow">Democratic poll</span>
+              <span class="nav-item nav-item-grow">Tournament Vote</span>
+            </div>
+            <div class="user-section">
+              <div class="history-wrapper">
+                <span>History</span>
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/e33e47bb79da32bd5d001e696231507d212a3bc9b5c2c1a10ac32ee66a854bf2?apiKey=cb617d26e1044ef184d535111275c0c4&" alt="History Icon" class="history-icon" />
+              </div>
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/8dd8556ab08787bb5ad2470f0990b692e09e70022221f42136f26de257cda595?apiKey=cb617d26e1044ef184d535111275c0c4&" alt="User Profile" class="user-icon" />
+            </div>
+          </div>
+        </nav>
+      </header>
+      <main class="account-card">
+        <form class="account-form">
+          <h1 class="account-title">My Account</h1>
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/78567bbb392a3be3ae77155d50cbfed2d5acc9c67bb9e1635641dfd4db739c6c?apiKey=cb617d26e1044ef184d535111275c0c4&" alt="Profile Picture" class="profile-image" />
+          <div class="username-section">
+            <span class="username">GrozSvi</span>
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/585b8caa397e7c9c2bf0fa2849313237c51bf8bba5a03695b3677334f6af91a4?apiKey=cb617d26e1044ef184d535111275c0c4&" alt="Edit Username" class="edit-icon" />
+          </div>
+          <label for="email" class="form-label">Email</label>
+          <div class="form-input-wrapper">
+            <input type="email" id="email" value="GrozSvi@abv.bg" class="form-input" />
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a19e06a9b78a666575a19d0b85b88a474e89b91e3174698cba302038a22e3a7e?apiKey=cb617d26e1044ef184d535111275c0c4&" alt="Edit Email" class="edit-icon" />
+          </div>
+          <label for="password" class="form-label">Password</label>
+          <div class="form-input-wrapper">
+            <input type="password" id="password" value="••••••••••••••••" class="form-input" />
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a4e7a5792a787c59472a35ec0928d2609a77874cd765a94143b803fae4b08a60?apiKey=cb617d26e1044ef184d535111275c0c4&" alt="Edit Password" class="edit-icon" />
+          </div>
+        </form>
+      </main>
+    </div>

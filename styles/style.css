@@ -1,5 +1,5 @@
 header {
-    background-color : #FC9CE4;
+    background-color : #fff;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -63,8 +63,18 @@ header {
 
 .header-buttons button {
     position: relative;
-    background-color: #BC7CDE;
+    background-color: #41305D;
     color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+#login{
+    position: relative;
+    background-color: #fff;
+    color: #474747;
     border: none;
     padding: 10px 20px;
     margin: 0 5px;
@@ -80,7 +90,7 @@ main {
     justify-content: center; 
     height: 100vh;
     padding: 1rem;
-    background-color: #BC7CDE;
+    /* background-color: #BC7CDE; */
     text-align: center; 
 }
 
@@ -101,7 +111,7 @@ button{
 }
 
 button:hover {
-    background-color: #db04ac; 
+    /* background-color: #db04ac;  */
 }
 
 
