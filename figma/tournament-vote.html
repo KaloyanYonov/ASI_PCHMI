@@ -1,288 +1,303 @@
-<style>
-  .tournament-vote-container {
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    font-weight: 400;
-    justify-content: center;
-  }
-  
-  .main-content {
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    overflow: hidden;
-    border: 1px solid #000;
-    position: relative;
-    min-height: 1365px;
-    width: 100%;
-    padding-bottom: 80px;
-  }
-  
-  @media (max-width: 991px) {
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tournament vote</title>
+</head>
+
+<body>
+  <style>
+    .tournament-vote-container {
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      font-weight: 400;
+      justify-content: center;
+    }
+
     .main-content {
-      max-width: 100%;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+      overflow: hidden;
+      border: 1px solid #000;
+      position: relative;
+      min-height: 1365px;
+      width: 100%;
+      padding-bottom: 80px;
     }
-  }
-  
-  .background-image {
-    position: absolute;
-    inset: 0;
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
-  
-  .header {
-    position: relative;
-    box-shadow: 0 1px 2px rgba(65, 48, 93, 0.25);
-    background-color: #fff;
-    display: flex;
-    width: 100%;
-    align-items: center;
-    font-size: 14px;
-    line-height: 150%;
-    justify-content: center;
-    padding: 16px 60px;
-  }
-  
-  @media (max-width: 991px) {
+
+    @media (max-width: 991px) {
+      .main-content {
+        max-width: 100%;
+      }
+    }
+
+    .background-image {
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
     .header {
-      max-width: 100%;
-      padding: 0 20px;
+      position: relative;
+      box-shadow: 0 1px 2px rgba(65, 48, 93, 0.25);
+      background-color: #fff;
+      display: flex;
+      width: 100%;
+      align-items: center;
+      font-size: 14px;
+      line-height: 150%;
+      justify-content: center;
+      padding: 16px 60px;
     }
-  }
-  
-  .header-content {
-    display: flex;
-    width: 100%;
-    max-width: 1140px;
-    gap: 20px;
-    justify-content: space-between;
-  }
-  
-  @media (max-width: 991px) {
+
+    @media (max-width: 991px) {
+      .header {
+        max-width: 100%;
+        padding: 0 20px;
+      }
+    }
+
     .header-content {
-      max-width: 100%;
-      flex-wrap: wrap;
+      display: flex;
+      width: 100%;
+      max-width: 1140px;
+      gap: 20px;
+      justify-content: space-between;
     }
-  }
-  
-  .logo-section {
-    align-self: start;
-    display: flex;
-    gap: 20px;
-    color: #474747;
-  }
-  
-  @media (max-width: 991px) {
+
+    @media (max-width: 991px) {
+      .header-content {
+        max-width: 100%;
+        flex-wrap: wrap;
+      }
+    }
+
     .logo-section {
-      flex-wrap: wrap;
+      align-self: start;
+      display: flex;
+      gap: 20px;
+      color: #474747;
     }
-  }
-  
-  .logo {
-    aspect-ratio: 3.33;
-    object-fit: auto;
-    object-position: center;
-    width: 125px;
-    max-width: 100%;
-    margin-right: 36px;
-  }
-  
-  .elimination-poll, .democratic-poll {
-    font-family: Inter, sans-serif;
-    margin: auto 0;
-  }
-  
-  .democratic-poll {
-    flex-grow: 1;
-    flex-basis: auto;
-  }
-  
-  .tournament-vote-section {
-    align-self: start;
-    display: flex;
-    margin-top: 15px;
-    flex-direction: column;
-    color: #412f5d;
-    font-weight: 700;
-    text-align: center;
-  }
-  
-  .tournament-vote-text {
-    font-family: Inter, sans-serif;
-  }
-  
-  .tournament-vote-underline {
-    border: 2px solid #412f5d;
-    background-color: #412f5d;
-    margin-top: 7px;
-    height: 2px;
-  }
-  
-  .auth-buttons {
-    display: flex;
-    gap: 20px;
-    justify-content: space-between;
-  }
-  
-  .login-button {
-    color: #474747;
-    font-family: Inter, sans-serif;
-    margin: auto 0;
-  }
-  
-  .signup-button {
-    font-family: Inter, sans-serif;
-    border-radius: 6px;
-    background-color: #41305d;
-    color: #fff;
-    justify-content: center;
-    padding: 14px 10px;
-  }
-  
-  .poll-creation-form {
-    position: relative;
-    border-radius: 20px;
-    box-shadow: 0 0 12.2px rgba(71, 71, 71, 0.3);
-    background-color: rgba(255, 255, 255, 0.6);
-    align-self: center;
-    display: flex;
-    width: 884px;
-    max-width: 100%;
-    flex-direction: column;
-    align-items: center;
-    font-size: 16px;
-    color: #412f5d;
-    margin: 100px 0 391px;
-    padding: 50px 60px 30px;
-  }
-  
-  @media (max-width: 991px) {
+
+    @media (max-width: 991px) {
+      .logo-section {
+        flex-wrap: wrap;
+      }
+    }
+
+    .logo {
+      aspect-ratio: 3.33;
+      object-fit: auto;
+      object-position: center;
+      width: 125px;
+      max-width: 100%;
+      margin-right: 36px;
+    }
+
+    .elimination-poll,
+    .democratic-poll {
+      font-family: Inter, sans-serif;
+      margin: auto 0;
+    }
+
+    .democratic-poll {
+      flex-grow: 1;
+      flex-basis: auto;
+    }
+
+    .tournament-vote-section {
+      align-self: start;
+      display: flex;
+      margin-top: 15px;
+      flex-direction: column;
+      color: #412f5d;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .tournament-vote-text {
+      font-family: Inter, sans-serif;
+    }
+
+    .tournament-vote-underline {
+      border: 2px solid #412f5d;
+      background-color: #412f5d;
+      margin-top: 7px;
+      height: 2px;
+    }
+
+    .auth-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: space-between;
+    }
+
+    .login-button {
+      color: #474747;
+      font-family: Inter, sans-serif;
+      margin: auto 0;
+    }
+
+    .signup-button {
+      font-family: Inter, sans-serif;
+      border-radius: 6px;
+      background-color: #41305d;
+      color: #fff;
+      justify-content: center;
+      padding: 14px 10px;
+    }
+
     .poll-creation-form {
-      margin: 40px 0;
-      padding: 0 20px;
+      position: relative;
+      border-radius: 20px;
+      box-shadow: 0 0 12.2px rgba(71, 71, 71, 0.3);
+      background-color: rgba(255, 255, 255, 0.6);
+      align-self: center;
+      display: flex;
+      width: 884px;
+      max-width: 100%;
+      flex-direction: column;
+      align-items: center;
+      font-size: 16px;
+      color: #412f5d;
+      margin: 64px 0 391px;
+      padding: 50px 60px 30px;
     }
-  }
-  
-  .form-content {
-    display: flex;
-    width: 639px;
-    max-width: 100%;
-    flex-direction: column;
-  }
-  
-  .form-title {
-    text-align: center;
-    align-self: center;
-    font: 700 36px Montserrat, sans-serif;
-  }
-  
-  .question-input {
-    border-radius: 6px;
-    border: 1px solid #808080;
-    margin-top: 29px;
-    align-items: start;
-    justify-content: center;
-    padding: 16px 12px;
-    font: 500 24px Inter, sans-serif;
-  }
-  
-  @media (max-width: 991px) {
+
+    @media (max-width: 991px) {
+      .poll-creation-form {
+        margin: 40px 0;
+        padding: 0 20px;
+      }
+    }
+
+    .form-content {
+      display: flex;
+      width: 639px;
+      max-width: 100%;
+      flex-direction: column;
+    }
+
+    .form-title {
+      text-align: center;
+      align-self: center;
+      font: 700 36px Montserrat, sans-serif;
+    }
+
     .question-input {
-      max-width: 100%;
-      padding-right: 20px;
+      border-radius: 6px;
+      border: 1px solid #808080;
+      margin-top: 29px;
+      align-items: start;
+      justify-content: center;
+      padding: 16px 12px;
+      font: 500 24px Inter, sans-serif;
     }
-  }
-  
-  .tournament-type-selector {
-    border-radius: 6px;
-    background-color: #412f5d;
-    align-self: center;
-    display: flex;
-    margin-top: 29px;
-    width: 237px;
-    max-width: 100%;
-    gap: 20px;
-    color: #fff;
-    font-weight: 500;
-    padding: 14px 12px;
-  }
-  
-  .tournament-type-text {
-    font-family: Inter, sans-serif;
-    flex-grow: 1;
-    flex-basis: auto;
-  }
-  
-  .dropdown-icon {
-    aspect-ratio: 1.54;
-    object-fit: auto;
-    object-position: center;
-    width: 20px;
-    fill: #fff;
-    align-self: start;
-  }
-  
-  .answer-row {
-    display: flex;
-    margin-top: 30px;
-    gap: 19px;
-  }
-  
-  @media (max-width: 991px) {
+
+    @media (max-width: 991px) {
+      .question-input {
+        max-width: 100%;
+        padding-right: 20px;
+      }
+    }
+
+    .tournament-type-selector {
+      border-radius: 6px;
+      background-color: #412f5d;
+      align-self: center;
+      display: flex;
+      margin-top: 29px;
+      width: 237px;
+      max-width: 100%;
+      gap: 20px;
+      color: #fff;
+      font-weight: 500;
+      padding: 14px 12px;
+    }
+
+    .tournament-type-text {
+      font-family: Inter, sans-serif;
+      flex-grow: 1;
+      flex-basis: auto;
+    }
+
+    .dropdown-icon {
+      aspect-ratio: 1.54;
+      object-fit: auto;
+      object-position: center;
+      width: 20px;
+      fill: #fff;
+      align-self: start;
+    }
+
     .answer-row {
-      max-width: 100%;
-      flex-wrap: wrap;
+      display: flex;
+      margin-top: 30px;
+      gap: 19px;
     }
-  }
-  
-  .answer-input {
-    font-family: Inter, sans-serif;
-    border-radius: 6px;
-    border: 1px solid #808080;
-    align-items: start;
-    justify-content: center;
-    flex-grow: 1;
-    width: fit-content;
-    padding: 15px 12px;
-  }
-  
-  @media (max-width: 991px) {
+
+    @media (max-width: 991px) {
+      .answer-row {
+        max-width: 100%;
+        flex-wrap: wrap;
+      }
+    }
+
     .answer-input {
-      padding-right: 20px;
+      font-family: Inter, sans-serif;
+      border-radius: 6px;
+      border: 1px solid #808080;
+      align-items: start;
+      justify-content: center;
+      flex-grow: 1;
+      width: fit-content;
+      padding: 15px 12px;
     }
-  }
-  
-  .create-poll-button {
-    font-family: Inter, sans-serif;
-    border-radius: 6px;
-    background-color: #41305d;
-    align-self: center;
-    margin-top: 29px;
-    color: #fff;
-    justify-content: center;
-    padding: 15px 14px;
-  }
-  
-  .footer-placeholder {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    margin-top: 20px;
-    height: auto;
-  }
+
+    @media (max-width: 991px) {
+      .answer-input {
+        padding-right: 20px;
+      }
+    }
+
+    .create-poll-button {
+      font-family: Inter, sans-serif;
+      border-radius: 6px;
+      background-color: #41305d;
+      align-self: center;
+      margin-top: 29px;
+      color: #fff;
+      justify-content: center;
+      padding: 15px 14px;
+    }
+
+    .footer-placeholder {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      margin-top: 20px;
+      height: auto;
+    }
   </style>
-  
+
   <main class="tournament-vote-container">
     <div class="main-content">
-      <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/0bba6576233489984677ae39095455f5637ab7bda41aeba4130a2a5dc488ddf5?apiKey=cb617d26e1044ef184d535111275c0c4&" class="background-image" alt="" />
+      <img loading="lazy"
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/0bba6576233489984677ae39095455f5637ab7bda41aeba4130a2a5dc488ddf5?apiKey=cb617d26e1044ef184d535111275c0c4&"
+        class="background-image" alt="" />
       <header class="header">
         <div class="header-content">
           <div class="logo-section">
-            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/10f391ea532266c39ffc0549396ba583ed348a6a9956a82df7b5163dfe02bcf3?apiKey=cb617d26e1044ef184d535111275c0c4&" class="logo" alt="Tournament Vote Logo" />
+            <img loading="lazy"
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/10f391ea532266c39ffc0549396ba583ed348a6a9956a82df7b5163dfe02bcf3?apiKey=cb617d26e1044ef184d535111275c0c4&"
+              class="logo" alt="Tournament Vote Logo" />
             <p class="elimination-poll">Elimination Poll</p>
             <p class="democratic-poll">Democratic poll</p>
             <div class="tournament-vote-section">
@@ -299,10 +314,13 @@
       <section class="poll-creation-form">
         <form class="form-content">
           <h1 class="form-title">Tournament Vote</h1>
-          <input type="text" class="question-input" placeholder="Type your question here" aria-label="Type your question here" />
+          <input type="text" class="question-input" placeholder="Type your question here"
+            aria-label="Type your question here" />
           <div class="tournament-type-selector">
             <span class="tournament-type-text">Tournament Type</span>
-            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/89481ed69d31843c7e95d531c425c94644b2ef36b71404461d525c142547012b?apiKey=cb617d26e1044ef184d535111275c0c4&" class="dropdown-icon" alt="" />
+            <img loading="lazy"
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/89481ed69d31843c7e95d531c425c94644b2ef36b71404461d525c142547012b?apiKey=cb617d26e1044ef184d535111275c0c4&"
+              class="dropdown-icon" alt="" />
           </div>
           <div class="answer-row">
             <input type="text" class="answer-input" placeholder="Type your answers here" aria-label="Answer 1" />
@@ -326,3 +344,6 @@
     </div>
     <footer class="footer-placeholder"></footer>
   </main>
+</body>
+
+</html>
