@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Democratic poll</title>
+</head>
+
+<body>
+  <style>
+    .container {
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      font-weight: 400;
+      justify-content: center;
+    }
+
+    .hero-section {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      position: relative;
+      min-height: 1365px;
+      width: 100%;
+      padding-bottom: 80px;
+    }
+
+    @media (max-width: 991px) {
+      .hero-section {
+        max-width: 100%;
+      }
+    }
+
+    .hero-image {
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .header {
+      position: relative;
+      box-shadow: 0 1px 2px 0 rgba(65, 48, 93, 0.25);
+      background-color: #fff;
+      display: flex;
+      width: 100%;
+      align-items: center;
+      font-size: 14px;
+      line-height: 150%;
+      justify-content: center;
+      padding: 16px 60px;
+    }
+
+    @media (max-width: 991px) {
+      .header {
+        max-width: 100%;
+        padding: 0 20px;
+      }
+    }
+
+    .header-content {
+      display: flex;
+      width: 100%;
+      max-width: 1140px;
+      gap: 20px;
+      justify-content: space-between;
+    }
+
+    @media (max-width: 991px) {
+      .header-content {
+        max-width: 100%;
+        flex-wrap: wrap;
+      }
+    }
+
+    .logo-section {
+      align-self: start;
+      display: flex;
+      gap: 20px;
+      color: #474747;
+    }
+
+    @media (max-width: 991px) {
+      .logo-section {
+        flex-wrap: wrap;
+      }
+    }
+
+    .logo {
+      aspect-ratio: 3.33;
+      object-fit: auto;
+      object-position: center;
+      width: 125px;
+      max-width: 100%;
+    }
+
+    .nav-item {
+      align-self: start;
+      display: flex;
+      margin-top: 14px;
+      flex-direction: column;
+      color: #412f5d;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .nav-link {
+      font-family: Inter, sans-serif;
+    }
+
+    .nav-underline {
+      border: 2px solid #412f5d;
+      background-color: #412f5d;
+      margin-top: 4px;
+      height: 2px;
+    }
+
+    .tournament-vote {
+      font-family: Inter, sans-serif;
+      flex-grow: 1;
+      flex-basis: auto;
+      margin: auto 0;
+    }
+
+    .auth-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: space-between;
+    }
+
+    .login-button {
+      color: #474747;
+      font-family: Inter, sans-serif;
+      margin: auto 0;
+    }
+
+    .signup-button {
+      font-family: Inter, sans-serif;
+      border-radius: 6px;
+      background-color: #41305d;
+      color: #fff;
+      justify-content: center;
+      padding: 14px 10px;
+    }
+
+    .poll-container {
+      position: relative;
+      border-radius: 20px;
+      box-shadow: 0 0 12.2px 0 rgba(71, 71, 71, 0.3);
+      background-color: rgba(255, 255, 255, 0.6);
+      align-self: center;
+      display: flex;
+      width: 884px;
+      max-width: 100%;
+      align-items: center;
+      font-size: 16px;
+      justify-content: center;
+      margin: 64px 0 494px;
+      padding: 43px 60px;
+    }
+
+    @media (max-width: 991px) {
+      .poll-container {
+        margin: 40px 0;
+        padding: 0 20px;
+      }
+    }
+
+    .poll-form {
+      display: flex;
+      width: 639px;
+      max-width: 100%;
+      flex-direction: column;
+    }
+
+    .poll-title {
+      color: #412f5d;
+      align-self: center;
+      font: 700 36px Montserrat, sans-serif;
+    }
+
+    .poll-input {
+      border-radius: 6px;
+      border: 1px solid #808080;
+      margin-top: 29px;
+      align-items: start;
+      color: #412f5d;
+      justify-content: center;
+      padding: 16px 12px;
+      font: 500 24px Inter, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+      .poll-input {
+        max-width: 100%;
+        padding-right: 20px;
+      }
+    }
+
+    .poll-option {
+      font-family: Inter, sans-serif;
+      border-radius: 6px;
+      border: 1px solid #808080;
+      margin-top: 19px;
+      align-items: start;
+      color: #412f5d;
+      justify-content: center;
+      padding: 15px 12px;
+    }
+
+    @media (max-width: 991px) {
+      .poll-option {
+        max-width: 100%;
+        padding-right: 20px;
+      }
+    }
+
+    .poll-actions {
+      align-self: center;
+      display: flex;
+      margin-top: 29px;
+      gap: 20px;
+      justify-content: space-between;
+    }
+
+    .create-poll-button {
+      font-family: Inter, sans-serif;
+      border-radius: 6px;
+      background-color: #41305d;
+      align-self: start;
+      color: #fff;
+      justify-content: center;
+      padding: 15px 12px;
+    }
+
+    .add-option-button {
+      font-family: Inter, sans-serif;
+      border-radius: 6px;
+      border: 1px solid #41305d;
+      background-color: transparent;
+      color: #412f5d;
+      justify-content: center;
+      padding: 16px 12px;
+    }
+
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+  </style>
+
+  <main class="container">
+    <section class="hero-section">
+      <img
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/a641e464136fa4b52806698568625071d8bd4f2315b3435afde282ef23b4ac4c?apiKey=cb617d26e1044ef184d535111275c0c4&"
+        alt="" class="hero-image" />
+      <header class="header">
+        <div class="header-content">
+          <div class="logo-section">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/25027ba9bd9ae1ad6304212e8a85af4d181341a3a1a7726f60cc0b0c73f224a2?apiKey=cb617d26e1044ef184d535111275c0c4&"
+              alt="Elimination Poll Logo" class="logo" />
+            <!-- <h1 class="brand-name">Elimination Poll</h1> -->
+            <a href="#" class="tournament-vote">Elimination Poll</a>
+            <nav class="nav-item">
+              <a href="#" class="nav-link">Democratic Poll</a>
+              <div class="nav-underline"></div>
+            </nav>
+            <a href="#" class="tournament-vote">Tournament Vote</a>
+          </div>
+          <div class="auth-buttons">
+            <a href="#" class="login-button">Login</a>
+            <a href="#" class="signup-button">Sign up</a>
+          </div>
+        </div>
+      </header>
+      <div class="poll-container">
+        <form class="poll-form">
+          <h2 class="poll-title">Democratic Poll</h2>
+          <label for="pollQuestion" class="visually-hidden">Type your question here</label>
+          <input type="text" id="pollQuestion" class="poll-input" placeholder="Type your question here" />
+          <label for="pollOption1" class="visually-hidden">Type your first answer here</label>
+          <input type="text" id="pollOption1" class="poll-option" placeholder="Type your answers here" />
+          <label for="pollOption2" class="visually-hidden">Type your second answer here</label>
+          <input type="text" id="pollOption2" class="poll-option" placeholder="Type your answers here" />
+          <label for="pollOption3" class="visually-hidden">Type your third answer here</label>
+          <input type="text" id="pollOption3" class="poll-option" placeholder="Type your answers here" />
+          <div class="poll-actions">
+            <button type="submit" class="create-poll-button">Create poll</button>
+            <button type="button" class="add-option-button">Add option</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>
